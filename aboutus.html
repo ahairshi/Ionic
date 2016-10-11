@@ -1,40 +1,27 @@
-<ion-view view-title="Ristorante con Fusion">
+<ion-view view-title="About Us">
     <ion-content>
-    <ion-list>
-        <div class="item item-divider">
-            <h2>Corporate Leadership</h2>
+
+        <div class="card">
+            <div class="item item-divider">
+                Our History
+            </div>
+            <div class="item item-text-wrap">
+                <p>Started in 2010, Ristorante con Fusion quickly established itself as a culinary icon par excellence in Hong Kong. With its unique brand of world fusion cuisine that can be found nowhere else, it enjoys patronage from the A-list clientele in Hong Kong. Featuring four of the best three-star Michelin chefs in the world, you never know what will arrive on your plate the next time you visit us. The restaurant traces its humble beginnings to The Frying Pan, a successful chain started by our CEO, Mr. Peter Pan, that featured for the first time the world's best cuisines in a pan.</p>
+            </div>
         </div>
-        <ion-item ng-repeat="dish in dishes | filter:{category: filtText}" href="#/app/menu/{{dish.id}}" class="item-thumbnail-left item-text-wrap item-avatar">
-            <img ng-src="{{baseURL+dish.image}}">
-            <h2>{{dish.name}}
-         <span style="font-size:75%">{{dish.price | currency}}</span>
-        <span class="badge badge-assertive">{{dish.label}}</span></h2>
-            <p>{{dish.description}}</p>
-        </ion-item>
-    </ion-list>
-        
-    <div class="list card"> Our Lipsmacking Culinary Creations
 
-  <a href="#" class="item item-icon-left">
-    <i class="icon ion-home"></i>
-    Enter home address
-  </a>
-
-  <a href="#" class="item item-icon-left">
-    <i class="icon ion-ios-telephone"></i>
-    Enter phone number
-  </a>
-
-  <a href="#" class="item item-icon-left">
-    <i class="icon ion-wifi"></i>
-    Enter wireless password
-  </a>
-
-  <a href="#" class="item item-icon-left">
-    <i class="icon ion-card"></i>
-    Enter card information
-  </a>
-
-</div>
+        <div class="card">
+            <div class="item item-divider">
+                <h2>Corporate Leadership</h2>
+            </div>
+            <ion-list>
+                <ion-item ng-repeat="leader in leaders" class="item item-text-wrap item-avatar">
+                    <img ng-src="{{baseURL+leader.image}}" alt="{{leader.name}}">
+                    <h2>{{leader.name}}</h2>
+                    <h3>{{leader.designation}}</h3>
+                    <p>{{leader.description}}</p>
+                </ion-item>
+            </ion-list>
+        </div>
     </ion-content>
 </ion-view>
